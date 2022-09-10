@@ -1,8 +1,8 @@
 function loadAboutPage(parent) {
-  parent.innerHTML = '';
+  parent.innerHTML = ''
 
-  const div = document.createElement('div');
-  div.classList.add('container', 'text-center', 'text-capitlize');
+  const div = document.createElement('div')
+  div.classList.add('container', 'text-center', 'text-capitlize')
   div.innerHTML = /*html*/ `
   <h3><strong>made by: Gil Yair Yamin</strong></h3>
     <p class="text-body">
@@ -18,9 +18,9 @@ function loadAboutPage(parent) {
       />
     <a href="https://github.com/GilYairYamin">GitHub</a>
   </p>
-  `;
+  `
 
-  parent.appendChild(div);
+  parent.appendChild(div)
 }
 
-export { loadAboutPage };
+export { loadAboutPage }
