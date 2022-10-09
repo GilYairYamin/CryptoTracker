@@ -1,4 +1,4 @@
-async function getCoinsData() {
+const getCoinsData = async () => {
   const coinsInfo = await fetch(
     'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD'
   ).then((response) => response.json())
@@ -12,7 +12,7 @@ async function getCoinsData() {
   }))
 }
 
-async function getCoinData(coin) {
+const getCoinData = async (coin) => {
   const coinInfo = await fetch(
     `https://min-api.cryptocompare.com/data/price?fsym=${coin.Name}&tsyms=USD,ILS,EUR`
   ).then((res) => res.json())

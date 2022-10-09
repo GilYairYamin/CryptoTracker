@@ -3,7 +3,7 @@ import { getCoinData } from '../data/marketCap.js'
 const TOGGLE_CLASS = 'coin-toggle-input'
 const INFO_BUTTON_CLASS = 'coin-more-info-btn'
 
-function addCoinCard(parent, coin) {
+const addCoinCard = (parent, coin) => {
   const div = document.createElement('div')
   div.classList.add('card', 'flex-row', 'col-lg-4', 'col-md-5', 'col-sm-12')
   div.id = 'holder-${coin.id}'
@@ -63,7 +63,7 @@ function addCoinCard(parent, coin) {
   return div
 }
 
-function element_createCoinData(coin) {
+const element_createCoinData = (coin) => {
   const res = document.createElement('div')
   res.classList.add('card', 'card-body', 'justify-content-center')
   res.innerHTML = /*html*/ `

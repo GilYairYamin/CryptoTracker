@@ -4,7 +4,7 @@ const UPDATE_INTERVAL = 1500
 const MAX_DATA_LENGTH = 15
 const CHART_COLORS = ['pink', 'blue', 'black', 'red', 'orange']
 
-async function addChart(canvas, selectedCoins) {
+const addChart = async (canvas, selectedCoins) => {
   const labels = []
   const datasets = []
 

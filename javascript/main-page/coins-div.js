@@ -4,7 +4,7 @@ import { saveToCache } from '../data/cache.js'
 
 let allCoins = null
 
-function addCoinDiv(parent, coinList) {
+const addCoinDiv = (parent, coinList) => {
   allCoins = coinList
   const coinDiv = document.createElement('div')
   coinDiv.classList.add('row', 'flex-row', 'justify-content-center')
@@ -13,12 +13,12 @@ function addCoinDiv(parent, coinList) {
   internalUpdateDiv(coinDiv, coinList)
 }
 
-function updateCoinDiv(coinList) {
+const updateCoinDiv = (coinList) => {
   const coinDiv = document.getElementById('coin-container')
   internalUpdateDiv(coinDiv, coinList)
 }
 
-function internalUpdateDiv(coinDiv, coinList) {
+const internalUpdateDiv = (coinDiv, coinList) => {
   coinDiv.innerHTML = ''
   for (const coin of coinList) {
     addCoinCard(coinDiv, coin)
@@ -35,7 +35,7 @@ function internalUpdateDiv(coinDiv, coinList) {
   }
 }
 
-function updateToggles() {
+const updateToggles = () => {
   const selectedAmount = allCoins.filter((coin) => coin.selected).length
   const isDisabled = selectedAmount >= MAX_SELECTED_AMOUNT
 

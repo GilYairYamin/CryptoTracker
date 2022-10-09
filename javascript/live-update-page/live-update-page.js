@@ -2,7 +2,7 @@ import { addChart } from './live-chart.js'
 
 const MAX_SELECTED_AMOUNT = 5
 
-async function loadUpdatePage(parent, coinList) {
+const loadUpdatePage = async (parent, coinList) => {
   parent.innerHTML = ''
   const selectedCoins = coinList.filter((coin) => coin.selected)
   if (selectedCoins.length <= 0) {

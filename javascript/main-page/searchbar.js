@@ -2,7 +2,7 @@ const SEARCH_ID = 'search-input'
 const CLEAR_ID = 'clear-button'
 const RESET_ID = 'reset-button'
 
-function addSearchbar(parent) {
+const addSearchbar = (parent) => {
   const searchDiv = document.createElement('div')
   searchDiv.classList.add('nav', 'justify-content-around')
   searchDiv.innerHTML = /*html*/ `

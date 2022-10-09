@@ -20,28 +20,7 @@ const allCoins = []
 let currentTab = MAIN_PAGE_ID
 let liveUpdateInterval = null
 
-for (const tabButton of document.querySelectorAll('.main-nav-btns')) {
-  tabButton.addEventListener('click', (e) => {
-    changeTab(e.currentTarget.id)
-  })
-}
-
-initApp()
-
-async function initApp() {
-  dynamicContent.innerHTML = '<h2>Loading Coins</h2>'
-  allCoins.push(...(await loadingCoins))
-
-  const cache = loadFromCache()
-  if (cache) {
-    const selectedCoins = allCoins.filter((coin) => cache[coin.Name])
-    for (const coin of selectedCoins) coin.selected = true
-    currentTab = cache ? cache[LAST_TAB_ID] : MAIN_PAGE_ID
-  }
-  changeTab(currentTab)
-}
-
-async function changeTab(tabId) {
+const changeTab = async (tabId) => {
   if (liveUpdateInterval !== null) {
     clearInterval(liveUpdateInterval)
     liveUpdateInterval = null
@@ -70,3 +49,24 @@ async function changeTab(tabId) {
   currentTab = tabId
   saveToCache(allCoins, currentTab)
 }
+
+const initApp = async () => {
+  dynamicContent.innerHTML = '<h2>Loading Coins</h2>'
+  allCoins.push(...(await loadingCoins))
+
+  const cache = loadFromCache()
+  if (cache) {
+    const selectedCoins = allCoins.filter((coin) => cache[coin.Name])
+    for (const coin of selectedCoins) coin.selected = true
+    currentTab = cache ? cache[LAST_TAB_ID] : MAIN_PAGE_ID
+  }
+  changeTab(currentTab)
+}
+
+for (const tabButton of document.querySelectorAll('.main-nav-btns')) {
+  tabButton.addEventListener('click', (e) => {
+    changeTab(e.currentTarget.id)
+  })
+}
+
+initApp()

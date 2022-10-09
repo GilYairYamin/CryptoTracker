@@ -1,4 +1,4 @@
-function loadAboutPage(parent) {
+const loadAboutPage = (parent) => {
   parent.innerHTML = ''
 
   const div = document.createElement('div')

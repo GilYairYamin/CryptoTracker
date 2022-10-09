@@ -2,7 +2,7 @@ import { addSearchbar, CLEAR_ID, RESET_ID, SEARCH_ID } from './searchbar.js'
 import { addCoinDiv, updateCoinDiv } from './coins-div.js'
 import { TOGGLE_CLASS, INFO_BUTTON_CLASS } from './coin-element.js'
 
-async function loadMainPage(parent, coinList) {
+const loadMainPage = async (parent, coinList) => {
   parent.innerHTML = ''
 
   addSearchbar(parent)
