@@ -44,3 +44,14 @@ Unlike typical modern web apps that rely on heavy frameworks like React or Angul
     │   └── live-chart.js       # Chart.js Config & Sliding Window
     └── about-page/     # Static content injector
 ```
+
+## 🔧 Setup & Usage
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [your-repo-link]
+    ```
+2.  **Open `index.html`:**
+    **Note:** Since this project uses ES6 modules (`import/export`), you must run it on a local server to avoid CORS errors (browsers block `file://` imports for security).
+    - **VS Code:** Install the "Live Server" extension, right-click `index.html`, and select "Open with Live Server".
+    - **Python:** Run `python -m http.server` in the project directory and visit `localhost:8000`.
